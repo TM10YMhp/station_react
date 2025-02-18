@@ -1,0 +1,54 @@
+@import "https://www.nerdfonts.com/assets/css/webfont.css";
+
+/* https://tailwindcss.com/docs/upgrade-guide */
+@config "../tailwind.config.cjs";
+@import "tailwindcss";
+
+/* HACK: https://github.com/tailwindlabs/tailwindcss/issues/16531 */
+/* https://issues.chromium.org/issues/394519480 */
+@custom-variant hover (&:hover);
+
+:root {
+  background: #000;
+  color: #fff;
+}
+
+/* https://github.com/saadeghi/daisyui/blob/master/src/base/general.css */
+/* device specific */
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+/* scrollbar color */
+* {
+  scrollbar-color: color-mix(in oklch, currentColor 35%, transparent)
+    transparent;
+  &:hover {
+    scrollbar-color: color-mix(in oklch, currentColor 60%, transparent)
+      transparent;
+  }
+}
+
+button {
+  @apply cursor-pointer;
+}
+
+.border-gradient {
+  border-image-slice: 1;
+  border-image-source: linear-gradient(
+    to right in oklch increasing hue,
+    oklch(0.585 0.233 277.117) 0%,
+    oklch(0.777 0.152 181.912) 100%
+  );
+}
+
+/* https://stackoverflow.com/a/38163892 */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+
+  background-color: #fff;
+  box-shadow: -999px 0 0 994px #fff;
+  border-radius: 999px;
+  height: 0.5rem;
+  width: 0.5rem;
+}
