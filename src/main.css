@@ -6,7 +6,8 @@
 
 /* HACK: https://github.com/tailwindlabs/tailwindcss/issues/16531 */
 /* https://issues.chromium.org/issues/394519480 */
-@custom-variant hover (&:hover);
+/* @custom-variant hover (&:hover); */
+/* NOTE: Solved? ⌒_⌒ */
 
 :root {
   background: #000;
